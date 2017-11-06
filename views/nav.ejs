@@ -1,0 +1,33 @@
+<div class="left-sidebar">
+    <!-- 用户信息 -->
+    <div class="tpl-sidebar-user-panel">
+        <div class="tpl-user-panel-slide-toggleable">
+            <div class="tpl-user-panel-profile-picture">
+                <img src="/img/user04.png" alt="">
+            </div>
+        </div>
+    </div>
+
+    <!-- 菜单 -->
+    <ul class="sidebar-nav">
+        <li class="sidebar-nav-heading">Order List <span class="sidebar-nav-heading-info"> 订单列表</span></li>
+        <li class="sidebar-nav-link">
+            <a href="income.ejs" <% if(path == 'income') {%>
+             <%= 'class=active'%> <% }%>>
+                <i class="am-icon-home sidebar-nav-link-logo"></i> 收入详情
+            </a>
+        </li>
+        <li class="sidebar-nav-link">
+            <a href="input.ejs" <% if(path == 'input') {%>
+             <%= 'class=active'%> <% }%>>
+                <i class="am-icon-table sidebar-nav-link-logo"></i> 订单录入
+            </a>
+        </li>
+        <li class="sidebar-nav-link">
+            <a href="details.ejs" <% if(path == 'details') {%> 
+                <%= 'class=active'%> <% }%>>
+                <i class="am-icon-calendar sidebar-nav-link-logo"></i> 订单详情
+            </a>
+        </li>
+    </ul>
+</div>
