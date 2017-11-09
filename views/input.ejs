@@ -9,51 +9,51 @@
             </div>
             <div class="widget-body am-fr">
 
-                <form class="am-form tpl-form-border-form">
+                <form class="am-form tpl-form-border-form" method="post" action="/insertorder.ejs">
                     <div class="am-form-group">
-                        <label for="user-name" class="am-u-sm-12 am-form-label am-text-left">客户姓名 <span class="tpl-form-line-small-title">Customer</span></label>
+                        <label for="input-customer" class="am-u-sm-12 am-form-label am-text-left">客户姓名 <span class="tpl-form-line-small-title">Customer</span></label>
                         <div class="am-u-sm-12">
-                            <input type="text" class="tpl-form-input am-margin-top-xs" id="user-name" placeholder="请输入客户姓名">
+                            <input type="text" class="tpl-form-input am-margin-top-xs" id="input-customer" name="customer" placeholder="请输入客户姓名">
                             <small>客户姓名（必填）</small>
                         </div>
                     </div>
 
                     <div class="am-form-group">
-                        <label for="user-email" class="am-u-sm-12 am-form-label am-text-left">商品名称 <span class="tpl-form-line-small-title">Goods</span></label>
+                        <label for="input-goods" class="am-u-sm-12 am-form-label am-text-left">商品名称 <span class="tpl-form-line-small-title">Goods</span></label>
                         <div class="am-u-sm-12">
-                            <input type="text" class="am-form-field tpl-form-no-bg am-margin-top-xs" placeholder="请输入商品名称" data-am-datepicker="" readonly="">
+                            <input type="text" class="tpl-form-input am-margin-top-xs" id="input-goods" name="goods" placeholder="请输入商品名称">
                             <small>商品名称（必填）</small>
                         </div>
                     </div>
 
                     <div class="am-form-group">
-                        <label for="user-email" class="am-u-sm-12 am-form-label am-text-left">商品数量 <span class="tpl-form-line-small-title">Number</span></label>
+                        <label for="input-number" class="am-u-sm-12 am-form-label am-text-left">商品数量 <span class="tpl-form-line-small-title">Number</span></label>
                         <div class="am-u-sm-12">
-                            <input type="text" class="am-form-field tpl-form-no-bg am-margin-top-xs" placeholder="请输入商品数量" data-am-datepicker="" readonly="">
+                            <input type="text" class="tpl-form-input am-margin-top-xs" id="input-number" name="number" placeholder="请输入商品数量">
                             <small>商品数量（必填）</small>
                         </div>
                     </div>
 
                     <div class="am-form-group">
-                        <label for="user-email" class="am-u-sm-12 am-form-label am-text-left">订单总值 <span class="tpl-form-line-small-title">Value</span></label>
+                        <label for="input-total" class="am-u-sm-12 am-form-label am-text-left">订单总值 <span class="tpl-form-line-small-title">Value</span></label>
                         <div class="am-u-sm-12">
-                            <input type="text" class="am-form-field tpl-form-no-bg am-margin-top-xs" placeholder="请输入订单总值" data-am-datepicker="" readonly="">
+                            <input type="text" class="tpl-form-input am-margin-top-xs" id="input-total" name="total" placeholder="请输入订单总值">
                             <small>订单总值（必填）</small>
                         </div>
                     </div>
 
                     <div class="am-form-group">
-                        <label for="user-email" class="am-u-sm-12 am-form-label am-text-left">该单盈利 <span class="tpl-form-line-small-title">Profit</span></label>
+                        <label for="input-profit" class="am-u-sm-12 am-form-label am-text-left">该单盈利 <span class="tpl-form-line-small-title">Profit</span></label>
                         <div class="am-u-sm-12">
-                            <input type="text" class="am-form-field tpl-form-no-bg am-margin-top-xs" placeholder="请输入该单盈利" data-am-datepicker="" readonly="">
+                            <input type="text" class="tpl-form-input am-margin-top-xs" id="input-profit" name="profit" placeholder="请输入该单盈利">
                             <small>该单盈利（必填）</small>
                         </div>
                     </div>
 
                     <div class="am-form-group">
-                        <label for="user-intro" class="am-u-sm-12 am-form-label  am-text-left">该单备注</label>
+                        <label for="input-desc" class="am-u-sm-12 am-form-label  am-text-left">该单备注</label>
                         <div class="am-u-sm-12 am-margin-top-xs">
-                            <textarea class="" rows="10" id="user-intro" placeholder="请输入该单备注"></textarea>
+                            <textarea rows="10" id="input-desc" name="desc" placeholder="请输入该单备注"></textarea>
                         </div>
                     </div>
 

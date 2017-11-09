@@ -21,7 +21,23 @@ let getOrderByDay = async () => {
     return res;
 }
 
+let insertOrder = async (param) => {
+    await client.startTransaction();
+    let res = await client.executeTransaction("SELECT * FROM `order` WHERE TO_DAYS(order_time) = TO_DAYS(NOW());", param);
+    await client.stopTransaction();
+    return res;
+}
+
+let getAllOrders = async () => {
+    await client.startTransaction();
+    let res = await client.executeTransaction("SELECT * FROM `order` ORDER BY order_time DESC", []);
+    await client.stopTransaction();
+    return res;
+}
+
 module.exports = {
 	getOrderByMonth: getOrderByMonth,
-	getOrderByDay: getOrderByDay
+	getOrderByDay: getOrderByDay,
+    insertOrder: insertOrder,
+    getAllOrders: getAllOrders
 }

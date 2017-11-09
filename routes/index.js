@@ -15,4 +15,6 @@ router.get('/details.ejs', details.initDetails)
 
 router.get('/closeout.ejs', bill.closeout)
 
+router.post('/insertorder.ejs', input.saveInput)
+
 module.exports = router
