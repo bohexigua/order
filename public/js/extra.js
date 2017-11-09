@@ -14,4 +14,4 @@ $billBtn.on('click', function (e) {
 			location.reload();
 		});
 	}
-})
+});

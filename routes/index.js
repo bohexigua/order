@@ -17,4 +17,10 @@ router.get('/closeout.ejs', bill.closeout)
 
 router.post('/insertorder.ejs', input.saveInput)
 
+router.get('/removeorder.ejs', details.removeOrder)
+
+router.get('/search.ejs', details.findOrder)
+
+router.get('/refreshDetails.ejs', details.findOrder)
+
 module.exports = router
