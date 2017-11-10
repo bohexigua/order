@@ -62,11 +62,13 @@
                                 <ul class="am-pagination tpl-pagination">
                                     <li class="am-pagination-select">
                                         <form action="/refreshDetails.ejs" method="get">
-                                           <select>
+                                           <select class="page-select" name="page">
                                                 <% for(let i = 1; i <= orderNum; i++) {%>
-                                                <option value="#">第 <%= i%> 页</option>
+                                                <option value="<%= i%>" <% if(page == i - 1) {%>
+                                                    <%= "selected"%> <% }%>>第 <%= i%> 页</option>
                                                 <% }%>
                                             </select>
+                                            <input type="submit" style="width: 0; height: 0; margin: 0; padding: 0; border: 0;" class="page-submit">
                                         </form>
                                     </li>
                                 </ul>

@@ -14,7 +14,16 @@ let updateBill = async () => {					// 即清账
     return res;
 }
 
+let setBill = async (money) => {                  // 累加账单
+    await client.startTransaction();
+    let bid = await client.executeTransaction("SELECT MAX(bill_id) as bid FROM bill;", []);
+    let res = await client.executeTransaction("UPDATE `bill` SET bill_value = bill_value + ? WHERE bill_id = ?;", [money, bid[0].bid]);
+    await client.stopTransaction();
+    return res;
+}
+
 module.exports = {
 	getBill: getBill,
+    setBill: setBill,
 	updateBill: updateBill
 }

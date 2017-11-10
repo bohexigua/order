@@ -1,6 +1,7 @@
 const order = require('../models/order')
 const details = require('./details')
-const customer = require('../models/customer');
+const customer = require('../models/customer')
+const bill = require('../models/bill')
 
 let initInput = async (ctx, next) => {
 	await ctx.render('index', {
@@ -33,6 +34,7 @@ let saveInput = async (ctx, next) => {
 	params.push(body.profit)
 	params.push(body.desc)
 	await order.insertOrder(params)
+	await bill.setBill(body.total)
 	await details.initDetails(ctx, next)
 }
 

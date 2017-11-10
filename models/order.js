@@ -25,8 +25,8 @@ let getAllOrders = async (s) => {
     let sPage = s;      //  起点页
     let pages = 10;     //  分页数
     await client.startTransaction();
-    let res = await client.executeTransaction("SELECT * FROM `order` o, `customer` c WHERE o.customer_id = c.customer_id AND o.order_id > (? * ?) ORDER BY o.order_time DESC LIMIT ?;",
-     [sPage, pages, pages]);    // 一页 10 条。
+    let res = await client.executeTransaction("SELECT * FROM `order` o, `customer` c WHERE o.customer_id = c.customer_id ORDER BY o.order_time DESC LIMIT ?, ?;",
+     [sPage * pages, pages]);    // 一页 10 条。
     await client.stopTransaction();
     return res;
 }

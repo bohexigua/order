@@ -21,6 +21,6 @@ router.get('/removeorder.ejs', details.removeOrder)
 
 router.get('/search.ejs', details.findOrder)
 
-router.get('/refreshDetails.ejs', details.findOrder)
+router.get('/refreshDetails.ejs', details.initDetails)
 
 module.exports = router
